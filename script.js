@@ -1,5 +1,5 @@
 let numRows = 0;
-let numCols = 7;
+let numCols = 0;
 let colorSelected; 
 
 //Add a row
@@ -17,6 +17,7 @@ function addR() {
 	};
 	table.appendChild(newRow);
 }
+
 //Add a column
 function addC() {
     alert("Clicked Add Col")
