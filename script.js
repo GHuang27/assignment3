@@ -86,7 +86,10 @@ function selected(){
 }
 
 function fill(cell){
-    cell.setAttribute('class', colorSelected);
+    let cells = document.getElementsByTagName('td');
+	for(let i = 0; i < cells.length; i++) {
+		cells[i].setAttribute('class', colorSelected);
+	};
 }
 
 function clearAll(){
