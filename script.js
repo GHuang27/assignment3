@@ -13,6 +13,7 @@ function addR() {
 	};
 	for(let i = 0; i < numCols; i++) {
 		newCol = document.createElement('td');
+		newCol.setAttribute('class', 'uncolored');
 		newRow.appendChild(newCol);
 	};
 	table.appendChild(newRow);
@@ -29,10 +30,14 @@ function addC() {
 		numRows++;
 	};
 	let cRow = table.firstElementChild;
-	cRow.appendChild(document.createElement('td'));
+	newCol = document.createElement('td');
+	newCol.setAttribute('class', 'uncolored');
+	cRow.appendChild(newCol);
 	for(let i = 1; i < numRows; i++) {
 		cRow = cRow.nextSibling;
-		cRow.appendChild(document.createElement('td'));
+		newCol = document.createElement('td');
+		newCol.setAttribute('class', 'uncolored');
+		cRow.appendChild(newCol);
 	};
 	numCols++;
 }
