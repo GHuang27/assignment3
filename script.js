@@ -14,7 +14,7 @@ function addR() {
 	for(let i = 0; i < numCols; i++) {
 		newCol = document.createElement('td');
 		newCol.setAttribute('class', 'uncolored');
-		newCol.setAttribute('onclick', 'fill(this);');
+		newCol.setAttribute('onclick', 'fillC(this);');
 		newRow.appendChild(newCol);
 	};
 	table.appendChild(newRow);
@@ -33,13 +33,13 @@ function addC() {
 	let cRow = table.firstElementChild;
 	newCol = document.createElement('td');
 	newCol.setAttribute('class', 'uncolored');
-	newCol.setAttribute('onclick', 'fill(this);');
+	newCol.setAttribute('onclick', 'fillC(this);');
 	cRow.appendChild(newCol);
 	for(let i = 1; i < numRows; i++) {
 		cRow = cRow.nextSibling;
 		newCol = document.createElement('td');
 		newCol.setAttribute('class', 'uncolored');
-		newCol.setAttribute('onclick', 'fill(this);');
+		newCol.setAttribute('onclick', 'fillC(this);');
 		cRow.appendChild(newCol);
 	};
 	numCols++;
@@ -86,7 +86,10 @@ function selected(){
 }
 
 function fill(cell){
-    cell.setAttribute('class', colorSelected);
+    let cells = document.getElementsByTagName('td');
+	for(let i = 0; i < cells.length; i++) {
+		cells[i].setAttribute('class', colorSelected);
+	};
 }
 
 function clearAll(){
@@ -98,4 +101,8 @@ function clearAll(){
 
 function fillU(){
     alert("Clicked Fill All Uncolored")
+}
+
+function fillC(cell) {
+	cell.setAttribute('class', colorSelected);
 }
