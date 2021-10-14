@@ -4,7 +4,12 @@ let colorSelected;
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
+    let table = document.querySelector('table');
+	let newRow = document.createElement('tr');
+	let newCol = document.createElement('td');
+	newRow.appendChild(newCol);
+	table.appendChild(newRow);
+	numRows++;
 }
 //Add a column
 function addC() {
