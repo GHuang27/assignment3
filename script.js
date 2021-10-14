@@ -13,6 +13,8 @@ function addR() {
 	};
 	for(let i = 0; i < numCols; i++) {
 		newCol = document.createElement('td');
+		newCol.setAttribute('class', 'uncolored');
+		newCol.setAttribute('onclick', 'fill(this);');
 		newRow.appendChild(newCol);
 	};
 	table.appendChild(newRow);
@@ -29,10 +31,16 @@ function addC() {
 		numRows++;
 	};
 	let cRow = table.firstElementChild;
-	cRow.appendChild(document.createElement('td'));
+	newCol = document.createElement('td');
+	newCol.setAttribute('class', 'uncolored');
+	newCol.setAttribute('onclick', 'fill(this);');
+	cRow.appendChild(newCol);
 	for(let i = 1; i < numRows; i++) {
 		cRow = cRow.nextSibling;
-		cRow.appendChild(document.createElement('td'));
+		newCol = document.createElement('td');
+		newCol.setAttribute('class', 'uncolored');
+		newCol.setAttribute('onclick', 'fill(this);');
+		cRow.appendChild(newCol);
 	};
 	numCols++;
 }
@@ -77,8 +85,8 @@ function selected(){
     console.log(colorSelected);
 }
 
-function fill(){
-    alert("Clicked Fill All")
+function fill(cell){
+    cell.setAttribute('class', colorSelected);
 }
 
 function clearAll(){
