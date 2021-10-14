@@ -90,7 +90,10 @@ function fill(cell){
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    let cells = document.getElementsByTagName('td');
+	for(let i = 0; i < cells.length; i++) {
+		cells[i].setAttribute('class', 'uncolored');
+	};
 }
 
 function fillU(){
