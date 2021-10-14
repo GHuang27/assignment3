@@ -42,7 +42,14 @@ function removeR() {
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+	let table = document.querySelector('table');
+	let cRow = table.firstElementChild;
+	cRow.lastElementChild.remove();
+	for(let i = 1; i < numRows; i++) {
+		cRow = cRow.nextSibling;
+		cRow.lastElementChild.remove();
+	}
+	numCols--;
 }
 //sets global var for selected color
 function selected(){
