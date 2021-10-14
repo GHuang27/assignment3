@@ -55,10 +55,6 @@ function removeC() {
 	if(numCols == 0) {
 		return;
 	};
-	if(numRows == 0) {
-		numCols--;
-		return;
-	};
 	let table = document.querySelector('table');
 	let cRow = table.firstElementChild;
 	cRow.lastElementChild.remove();
