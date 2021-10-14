@@ -20,6 +20,11 @@ function addR() {
 
 //Add a column
 function addC() {
+	if(numRows == 0) {
+		addR();
+	};
+	let table = document.querySelector('table');
+	let newCol = document.createElement('tr');
     alert("Clicked Add Col")
 }
 
