@@ -36,21 +36,29 @@ function addC() {
 
 //Remove a row
 function removeR() {
+	if(numRows == 0) {
+		return;
+	};
     let table = document.querySelector('table');
 	table.lastElementChild.remove();
 	numRows--;
 }
+
 //Remove a column
 function removeC() {
+	if(numCols == 0) {
+		return;
+	};
 	let table = document.querySelector('table');
 	let cRow = table.firstElementChild;
 	cRow.lastElementChild.remove();
 	for(let i = 1; i < numRows; i++) {
 		cRow = cRow.nextSibling;
 		cRow.lastElementChild.remove();
-	}
+	};
 	numCols--;
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
