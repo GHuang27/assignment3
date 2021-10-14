@@ -45,15 +45,14 @@ function removeR() {
     let table = document.querySelector('table');
 	table.lastElementChild.remove();
 	numRows--;
+	if(numRows == 0) {
+		numCols = 0;
+	};
 }
 
 //Remove a column
 function removeC() {
 	if(numCols == 0) {
-		return;
-	};
-	if(numRows == 0) {
-		numCols--;
 		return;
 	};
 	let table = document.querySelector('table');
@@ -64,6 +63,12 @@ function removeC() {
 		cRow.lastElementChild.remove();
 	};
 	numCols--;
+	if(numCols == 0) {
+		for(let i = 0; i < numRows; i++) {
+			table.firstElementChild.remove();
+		};
+		numRows = 0;
+	};
 }
 
 //sets global var for selected color
