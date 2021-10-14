@@ -26,6 +26,7 @@ function addC() {
 	if(numRows == 0) {
 		let newRow = document.createElement('tr');
 		table.appendChild(newRow);
+		numRows++;
 	};
 	let cRow = table.firstElementChild;
 	cRow.appendChild(document.createElement('td'));
