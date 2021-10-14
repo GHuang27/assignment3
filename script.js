@@ -20,7 +20,18 @@ function addR() {
 
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+	if(numRows == 0) {
+		addR();
+	};
+	let table = document.querySelector('table');
+	let newCol;
+	let cRow = table.firstElementChild;
+	cRow.appendChild(document.createElement('td'));
+	for(let i = 1; i < numRows; i++) {
+		cRow = cRow.nextSibling;
+		cRow.appendChild(document.createElement('td'));
+	};
+	numCols++;
 }
 
 //Remove a row
