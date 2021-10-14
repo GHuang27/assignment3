@@ -100,7 +100,12 @@ function clearAll(){
 }
 
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    let cells = document.getElementsByTagName('td');
+	for(let i = 0; i < cells.length; i++) {
+		if(cells[i].className === 'uncolored') {
+			cells[i].className = colorSelected;
+		};
+	};
 }
 
 function fillC(cell) {
