@@ -1,10 +1,21 @@
 let numRows = 0;
-let numCols = 0;
+let numCols = 7;
 let colorSelected; 
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
+    let table = document.querySelector('table');
+	let newRow = document.createElement('tr');
+	let newCol;
+	numRows++;
+	if(numCols == 0) {
+		numCols = 1;
+	};
+	for(let i = 0; i < numCols; i++) {
+		newCol = document.createElement('td');
+		newRow.appendChild(newCol);
+	};
+	table.appendChild(newRow);
 }
 //Add a column
 function addC() {
