@@ -86,9 +86,7 @@ function selected(){
 }
 
 function fill(cell){
-	console.log('Reid');
-    cell.setAttribute('class', 'dummy');
-	cell.setAttribute('style', 'background-color: red;');
+    cell.setAttribute('class', colorSelected);
 }
 
 function clearAll(){

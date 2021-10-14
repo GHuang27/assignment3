@@ -7,8 +7,15 @@ td{
     width: 50px;
     background-color: white;
 }
-.colored{
-	height: 50px;
-    width: 50px;
-    background-color: black;
+.Red{
+    background-color: red;
+}
+.Blue{
+	background-color: blue;
+}
+.Green{
+	background-color: green;
+}
+.Yellow{
+	background-color: yellow;
 }
