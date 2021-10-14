@@ -10,6 +10,10 @@ function addR() {
 	newRow.appendChild(newCol);
 	table.appendChild(newRow);
 	numRows++;
+	if(numCols == 0) {
+		numCols = 1;
+	};
+	console.log(numCols);	
 }
 //Add a column
 function addC() {
