@@ -14,7 +14,7 @@ function addR() {
 	for(let i = 0; i < numCols; i++) {
 		newCol = document.createElement('td');
 		newCol.setAttribute('class', 'uncolored');
-		newCol.setAttribute('onclick', 'fill();');
+		newCol.setAttribute('onclick', 'fill(this);');
 		newRow.appendChild(newCol);
 	};
 	table.appendChild(newRow);
@@ -33,13 +33,13 @@ function addC() {
 	let cRow = table.firstElementChild;
 	newCol = document.createElement('td');
 	newCol.setAttribute('class', 'uncolored');
-	newCol.setAttribute('onclick', 'fill();');
+	newCol.setAttribute('onclick', 'fill(this);');
 	cRow.appendChild(newCol);
 	for(let i = 1; i < numRows; i++) {
 		cRow = cRow.nextSibling;
 		newCol = document.createElement('td');
 		newCol.setAttribute('class', 'uncolored');
-		newCol.setAttribute('onclick', 'fill();');
+		newCol.setAttribute('onclick', 'fill(this);');
 		cRow.appendChild(newCol);
 	};
 	numCols++;
@@ -85,8 +85,10 @@ function selected(){
     console.log(colorSelected);
 }
 
-function fill(){
-    alert("Clicked Fill All")
+function fill(cell){
+	console.log('Reid');
+    cell.setAttribute('class', 'dummy');
+	cell.setAttribute('style', 'background-color: red;');
 }
 
 function clearAll(){
