@@ -18,13 +18,16 @@ function addR() {
 	table.appendChild(newRow);
 }
 
+//ADJUST THE 0 ROWS CASE
 //Add a column
 function addC() {
-	if(numRows == 0) {
-		addR();
-	};
 	let table = document.querySelector('table');
 	let newCol;
+	if(numRows == 0) {
+		let newRow = document.createElement('tr');
+		table.appendChild(newRow);
+		numRows++;
+	};
 	let cRow = table.firstElementChild;
 	cRow.appendChild(document.createElement('td'));
 	for(let i = 1; i < numRows; i++) {
@@ -36,14 +39,33 @@ function addC() {
 
 //Remove a row
 function removeR() {
+	if(numRows == 0) {
+		return;
+	};
     let table = document.querySelector('table');
 	table.lastElementChild.remove();
 	numRows--;
 }
+
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+	if(numCols == 0) {
+		return;
+	};
+	if(numRows == 0) {
+		numCols--;
+		return;
+	};
+	let table = document.querySelector('table');
+	let cRow = table.firstElementChild;
+	cRow.lastElementChild.remove();
+	for(let i = 1; i < numRows; i++) {
+		cRow = cRow.nextSibling;
+		cRow.lastElementChild.remove();
+	};
+	numCols--;
 }
+
 //sets global var for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
