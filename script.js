@@ -18,13 +18,15 @@ function addR() {
 	table.appendChild(newRow);
 }
 
+//ADJUST THE 0 ROWS CASE
 //Add a column
 function addC() {
-	if(numRows == 0) {
-		addR();
-	};
 	let table = document.querySelector('table');
 	let newCol;
+	if(numRows == 0) {
+		let newRow = document.createElement('tr');
+		table.appendChild(newRow);
+	};
 	let cRow = table.firstElementChild;
 	cRow.appendChild(document.createElement('td'));
 	for(let i = 1; i < numRows; i++) {
@@ -47,6 +49,10 @@ function removeR() {
 //Remove a column
 function removeC() {
 	if(numCols == 0) {
+		return;
+	};
+	if(numRows == 0) {
+		numCols--;
 		return;
 	};
 	let table = document.querySelector('table');
